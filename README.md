@@ -6,6 +6,8 @@
 
 The backend deploys to Render from [`render.yaml`](render.yaml), and the frontend is on Vercel. On Render's free plan the API sleeps when idle, so the first request after a while can take about 50 seconds.
 
+![Screenshot](docs/screenshot.png)
+
 
 Reconcile an Indian GST **purchase register** against **GSTR-2B** in seconds. Upload two Excel files and get each invoice sorted as matched, tax mismatch, missing in 2B or extra in 2B, plus ITC totals and a formatted Excel report.
 
@@ -175,3 +177,7 @@ All routes live under `/api/v1`. Interactive docs are at `/docs`.
 - Uploaded files are stored on local disk (`STORAGE_DIR`). On Railway, attach a volume, or files will be lost on redeploy. With a separate Celery worker, the API and the worker must share that storage.
 - Schema changes are applied with `create_all` on startup; there are no Alembic migrations yet.
 - The sample workbooks under `GST_Recon_System/Clients/` contain synthetic data only.
+
+## License
+
+[MIT](LICENSE) © Hari Om Kasaundhan
