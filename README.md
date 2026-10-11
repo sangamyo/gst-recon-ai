@@ -1,5 +1,12 @@
 # GST Recon AI
 
+**Live demo:** https://gst-recon-ai.vercel.app
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sangamyo/gst-recon-ai)
+
+The backend deploys to Render from [`render.yaml`](render.yaml), and the frontend is on Vercel. On Render's free plan the API sleeps when idle, so the first request after a while can take about 50 seconds.
+
+
 Reconcile an Indian GST **purchase register** against **GSTR-2B** in seconds. Upload two Excel files and get each invoice sorted as matched, tax mismatch, missing in 2B or extra in 2B, plus ITC totals and a formatted Excel report.
 
 This repository has two parts:
