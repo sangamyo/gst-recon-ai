@@ -1,14 +1,18 @@
 import { FormEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
-  const { login } = useAuthContext();
+  const { login, user } = useAuthContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,6 +43,7 @@ export const LoginPage = () => {
               placeholder="ca@example.com"
               required
               type="email"
+              autoComplete="email"
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 focus:border-primary focus:outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -52,6 +57,7 @@ export const LoginPage = () => {
               id="login-password"
               required
               type="password"
+              autoComplete="current-password"
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 focus:border-primary focus:outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

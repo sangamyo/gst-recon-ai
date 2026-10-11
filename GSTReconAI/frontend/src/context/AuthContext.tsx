@@ -54,9 +54,14 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
     localStorage.setItem("gst_token", data.access_token);
+    // Load the profile with the new token right away. Calling fetchProfile here would
+    // use the previous render's closure (token still null), so the user would not be
+    // set before the caller navigates to a protected page.
+    const { data: profile } = await apiClient.get<AuthUser>("/auth/me");
+    setUser(profile);
     setToken(data.access_token);
-    await fetchProfile();
-  }, [fetchProfile]);
+    setLoading(false);
+  }, []);
 
   const register = useCallback(
     async (payload: { name: string; email: string; password: string }) => {

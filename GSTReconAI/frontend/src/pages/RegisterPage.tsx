@@ -64,6 +64,7 @@ export const RegisterPage = () => {
               placeholder="ca@example.com"
               required
               type="email"
+              autoComplete="email"
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2"
               value={form.email}
               onChange={(event: ChangeEvent<HTMLInputElement>) => updateField("email", event.target.value)}
@@ -79,6 +80,7 @@ export const RegisterPage = () => {
               minLength={8}
               required
               type="password"
+              autoComplete="new-password"
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2"
               value={form.password}
               onChange={(event: ChangeEvent<HTMLInputElement>) => updateField("password", event.target.value)}
