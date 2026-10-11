@@ -1,0 +1,19 @@
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+python-dotenv==1.0.1
+SQLAlchemy==2.0.27
+psycopg2-binary==2.9.9
+passlib[bcrypt]==1.7.4
+# passlib 1.7.4 is incompatible with bcrypt>=4.1/5.x (version probe + 72-byte check)
+bcrypt==4.0.1
+PyJWT==2.8.0
+pydantic[email]==2.6.3
+pydantic-settings==2.2.1
+pandas==2.2.1
+openpyxl==3.1.2
+celery==5.3.6
+redis==5.0.1
+python-multipart==0.0.9
+numpy==1.26.4
+orjson==3.9.15
+loguru==0.7.2

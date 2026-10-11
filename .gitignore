@@ -1,0 +1,39 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Environment files (keep the examples)
+.env
+.env.*
+!.env.example
+
+# Local databases & logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# Uploads and generated reports
+uploads/
+storage/
+GSTReconAI/backend/storage/
+GST_Recon_System/Output/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
